@@ -58,3 +58,28 @@ undefined == null //true
 undefined === null //false
 null == "\n0\n" //false
 null === +"\n0\n"//false
+
+//Cравнение NaN, null и undefined///////////////////////////
+//NaN 
+//не равен ничему, даже самому себе
+NaN == NaN // false
+NaN === NaN //false
+
+//null 
+// == (нестрогое):
+//null == undefined и ничему больше
+null == undefined // true 
+null == 0 // false 
+null == false // false
+//=== (строгое):
+null === undefined // false (разные типы)
+null === null // true 
+
+//undefined
+//== (нестрогое):
+undefined == null //true
+undefined == false // false
+undefined == 0 // false
+//=== (строгое):
+undefined === null // false (разные типы)
+undefined === undefined // true

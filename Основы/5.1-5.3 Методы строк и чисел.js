@@ -165,3 +165,144 @@ function formatNumber(num) {
   }
   
   
+
+
+
+
+
+
+
+  // Строки /////////////////////////////////////////////
+
+  //Методы примитивов
+
+
+//1. Напиши функцию removeDuplicates(str), которая удаляет все повторяющиеся символы, оставляя только первое вхождение каждого.
+
+console.log(removeDuplicates("hello world")); // "helo wrd"
+console.log(removeDuplicates("aabbccddeeff")); // "abcdef"
+
+function removeDuplicates(str) {
+    let arr = []
+
+    for(let i of str) {
+        if (!arr.includes(i)) {
+        arr.push(i)
+        }
+        continue
+    }
+    return arr.join('')
+}
+
+
+
+//2. Напиши функцию charCount(str), которая возвращает объект с количеством вхождений каждого символа.
+
+console.log(charCount("hello")); // { h: 1, e: 1, l: 2, o: 1 }
+
+function charCount(str) {
+  let obj = {}
+  
+  for (let i of str) {
+    if (obj[i]) {
+        obj[i]++
+    } else {
+        obj[i] = 1
+    }
+  }
+  return obj
+}
+
+
+
+//3. Напиши функцию reverseWords(str), которая разворачивает буквы в каждом слове, но сохраняет порядок слов.
+
+console.log(reverseWords("hello world")); // "olleh dlrow"
+console.log(reverseWords("JavaScript is fun")); // "tpircSavaJ si nuf"
+
+
+function reverseWords(str) {
+  let arr = str.split(' ')
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].split('').reverse().join('')
+  }
+  return arr.join(' ')
+}
+
+
+
+//4. Напиши функцию removeVowels(str), которая удаляет все гласные (a, e, i, o, u).
+
+console.log(removeVowels("hello world")); // "hll wrld"
+console.log(removeVowels("javascript")); // "jvscrpt"
+
+function removeVowels(str) {
+    let arr = str.split('')
+    let results = arr.filter(item => item !== "a" 
+      && item !== "e" 
+      && item !== "i" 
+      && item !== "o" 
+      && item !== "a"
+     )
+     return results.join('')
+}
+
+
+
+//5. Напиши функцию isAnagram(str1, str2), которая проверяет, 
+// можно ли из одной строки составить другую, переставляя буквы.
+
+console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("hello", "world")); // false
+
+
+function isAnagram(str1, str2) {
+  let standartizedStr1 = str1.split('').sort().join('')
+  let standartizedStr2 = str2.split('').sort().join('')
+  if (standartizedStr1 === standartizedStr2 ) {
+    return true
+  } 
+  return false
+}
+
+console.log('listen'.split('').sort().join(''))
+
+
+
+
+//6. Напиши функцию wordCount(str), которая считает количество слов в строке (разделитель — пробел).
+
+console.log(wordCount("hello world! This is JavaScript.")); // 5
+console.log(wordCount("One, two, three.")); // 3
+console.log(wordCount("One, two, three. dfgdh 23425 sdfgsdhd 23452 dfgdh")); // 8
+
+
+function wordCount(str) {
+    const arr = str.split('')
+    let count = 1
+    for (let i of arr) {
+      if (i === " ") {
+        count++
+      }
+    }
+    return count
+}
+
+
+
+
+//7. Напиши функцию doubleChars(str), которая дублирует каждый символ в строке.
+
+
+console.log(doubleChars("hello")); // "hheelllloo"
+console.log(doubleChars("123")); // "112233"
+
+
+function doubleChars(str) {
+  let arr = str.split('')
+  let arrDouble = []
+  for (let i of arr) {
+    arrDouble.push(i + i)
+  }
+  return arrDouble.join('')
+}
